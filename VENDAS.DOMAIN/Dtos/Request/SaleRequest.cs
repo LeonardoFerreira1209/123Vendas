@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace VENDAS.DOMAIN.Dtos.Request;
+﻿namespace VENDAS.DOMAIN.Dtos.Request;
 
 /// <summary>
 /// Objeto de transporte de dados de request de venda.
