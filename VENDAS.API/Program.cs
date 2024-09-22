@@ -1,3 +1,4 @@
+using Hangfire;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using System.Text.Json.Serialization;
@@ -41,6 +42,7 @@ try
         .ConfigureApplicationCookie()
         .ConfigureCors()
         .AddMemoryCache()
+        .ConfigureHangfire(configurations)
         .AddControllers(options =>
         {
             options.EnableEndpointRouting = false;
@@ -67,10 +69,12 @@ try
         .UseSwaggerConfigurations(configurations);
 
     applicationbuilder.UseHsts();
+    applicationbuilder.UseHangfireDashboard();
+
     applicationbuilder.MapControllers();
 
-    //applicationbuilder
-    //    .ConfigureServiceBusSubscriber();
+    applicationbuilder
+        .ConfigureServiceBusSubscriber();
 
     applicationbuilder
        .Lifetime.ApplicationStarted

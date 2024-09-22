@@ -5,8 +5,46 @@ namespace VENDAS.DOMAIN.Entities;
 /// <summary>
 /// Entidade de venda.
 /// </summary>
+/// <remarks>
+/// ctor
+/// </remarks>
+/// <param name="created"></param>
+/// <param name="status"></param>
+/// <param name="updated"></param>
+/// <param name="client"></param>
+/// <param name="branch"></param>
+/// <param name="products"></param>
 public class SaleEntity : IEntityBase
 {
+    /// <summary>
+    /// ctor
+    /// </summary>
+    public SaleEntity()
+    {
+        
+    }
+
+    /// <summary>
+    /// ctor
+    /// </summary>
+    /// <param name="created"></param>
+    /// <param name="updated"></param>
+    /// <param name="status"></param>
+    /// <param name="client"></param>
+    /// <param name="branch"></param>
+    /// <param name="products"></param>
+    public SaleEntity(DateTime created, DateTime? updated,
+        StatusVenda status, ClientEntity client,
+        BranchEntity branch, ICollection<ProductEntity> products)
+    {
+        Created = created;
+        Updated = updated;
+        Status = status;
+        Client = client;
+        Branch = branch;
+        Products = products;
+    }
+
     /// <summary>
     /// Identificador.
     /// </summary>
@@ -20,7 +58,7 @@ public class SaleEntity : IEntityBase
     /// <summary>
     /// Data de atualização.
     /// </summary>
-    public DateTime? Updated { get; set; } = null;
+    public DateTime? Updated { get; set; }
 
     /// <summary>
     /// Status do cadastro.
@@ -40,7 +78,7 @@ public class SaleEntity : IEntityBase
     /// <summary>
     /// Lista de dados de Produto.
     /// </summary>
-    public virtual IEnumerable<ProductEntity> Products { get; set; } = [];
+    public virtual ICollection<ProductEntity> Products { get; set; }
 
     /// <summary>
     /// Valor total.

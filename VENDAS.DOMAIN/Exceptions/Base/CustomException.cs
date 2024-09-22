@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using VENDAS.DOMAIN.Dtos.Base;
+using VENDAS.DOMAIN.Dtos.Response.Base;
 
 namespace VENDAS.DOMAIN.Exceptions.Base;
 

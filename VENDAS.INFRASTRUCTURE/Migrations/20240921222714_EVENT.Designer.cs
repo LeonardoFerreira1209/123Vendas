@@ -11,8 +11,8 @@ using VENDAS.INFRASTRUCTURE.Context;
 namespace VENDAS.INFRASTRUCTURE.Migrations
 {
     [DbContext(typeof(SaleContext))]
-    [Migration("20240921072631_INITIAL")]
-    partial class INITIAL
+    [Migration("20240921222714_EVENT")]
+    partial class EVENT
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,7 +121,7 @@ namespace VENDAS.INFRASTRUCTURE.Migrations
                             b1.Property<decimal>("TotalAmount")
                                 .HasColumnType("decimal(18,2)");
 
-                            b1.Property<decimal>("UnitVakue")
+                            b1.Property<decimal>("UnitValue")
                                 .HasColumnType("decimal(18,2)");
 
                             b1.HasKey("SaleEntityId", "Id");

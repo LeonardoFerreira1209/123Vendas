@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using VENDAS.DOMAIN.Contracts.Repositories.Base;
-using VENDAS.DOMAIN.Dtos.Base;
+using VENDAS.DOMAIN.Dtos.Response.Base;
 using VENDAS.DOMAIN.Entities;
 
 namespace VENDAS.INFRASTRUCTURE.Repositories.Base;

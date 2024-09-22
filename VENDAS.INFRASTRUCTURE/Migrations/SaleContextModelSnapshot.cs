@@ -22,6 +22,35 @@ namespace VENDAS.INFRASTRUCTURE.Migrations
                 .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("VENDAS.DOMAIN.Entities.EventEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("JsonBody")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("Processed")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("SchedulerTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("Sended")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Events");
+                });
+
             modelBuilder.Entity("VENDAS.DOMAIN.Entities.SaleEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -118,7 +147,7 @@ namespace VENDAS.INFRASTRUCTURE.Migrations
                             b1.Property<decimal>("TotalAmount")
                                 .HasColumnType("decimal(18,2)");
 
-                            b1.Property<decimal>("UnitVakue")
+                            b1.Property<decimal>("UnitValue")
                                 .HasColumnType("decimal(18,2)");
 
                             b1.HasKey("SaleEntityId", "Id");

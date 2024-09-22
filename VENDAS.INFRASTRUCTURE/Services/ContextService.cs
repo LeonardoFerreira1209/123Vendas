@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Security.Claims;
 using VENDAS.DOMAIN.Contracts.Services;
 
-namespace VENDAS.APPLICATION.Services;
+namespace VENDAS.INFRASTRUCTURE.Services;
 
 /// <summary>
 /// Classe de contexto Http do sistema.
@@ -28,12 +28,12 @@ public class ContextService(
     /// <returns></returns>
     public Guid GetCurrentUserId()
         => Guid.Parse(httpContextAccessor.HttpContext
-            ?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
+            ?.User?.FindFirst(ClaimTypes.NameIdentifier).Value);
 
     /// <summary>
     /// Tenta Recuperar um valor do header pelo key/type.
     /// </summary>
-    /// <param name="key"></param>
+    /// <param name="header"></param>
     /// <param name="value"></param>
     /// <returns></returns>
     public bool TryGetValueByHeader(string key, [MaybeNullWhen(false)] out StringValues value)

@@ -23,7 +23,7 @@ public class ProductEntity : IEntityPrimaryKey<Guid>
     /// <summary>
     /// Valor unitário.
     /// </summary>
-    public decimal UnitVakue { get; set; }
+    public decimal UnitValue { get; set; }
 
     /// <summary>
     /// Quantidade.
@@ -40,7 +40,7 @@ public class ProductEntity : IEntityPrimaryKey<Guid>
     /// </summary>
     public decimal TotalAmount
     {
-        get => (UnitVakue * Quantity) - Discount;
+        get => (UnitValue * Quantity) - Discount;
 
         private set { }
     }

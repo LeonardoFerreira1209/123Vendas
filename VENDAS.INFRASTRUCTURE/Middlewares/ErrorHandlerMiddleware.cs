@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.Text.Json;
-using VENDAS.DOMAIN.Dtos.Base;
+using VENDAS.DOMAIN.Dtos.Response.Base;
 using VENDAS.DOMAIN.Exceptions.Base;
 
 namespace VENDAS.INFRASTRUCTURE.Middlewares;
@@ -65,6 +65,7 @@ public class ErrorHandlerMiddleware(
         {
             BaseException customEx => (customEx.Response.StatusCode,
                                                            JsonSerializer.Serialize(customEx.Response)),
+
             _ => (HttpStatusCode.InternalServerError, JsonSerializer.Serialize(new
             {
                 StatusCode = HttpStatusCode.InternalServerError,

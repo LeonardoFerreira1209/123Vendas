@@ -1,5 +1,4 @@
-﻿using VENDAS.DOMAIN.Dtos.Request;
-using VENDAS.DOMAIN.Enums;
+﻿using VENDAS.DOMAIN.Enums;
 
 namespace VENDAS.DOMAIN.Dtos.Response;
 

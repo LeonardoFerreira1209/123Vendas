@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using VENDAS.DOMAIN.Enums;
 
 namespace VENDAS.DOMAIN.Helpers.Extensions;
 
@@ -17,6 +18,16 @@ public static class SystemExtensions
         var jsonSerializerSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
 
         return JsonConvert.SerializeObject(item, jsonSerializerSettings);
+    }
+
+    /// <summary>
+    /// Obtem o código de um Enum
+    /// </summary>
+    /// <param name="valor"></param>
+    /// <returns></returns>
+    public static string ToCode(this ErrorCode valor)
+    {
+        return valor.GetHashCode().ToString();
     }
 }
 

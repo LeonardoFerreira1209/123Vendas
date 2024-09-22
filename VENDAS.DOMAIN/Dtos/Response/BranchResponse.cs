@@ -1,4 +1,4 @@
-﻿namespace VENDAS.DOMAIN.Dtos.Request;
+﻿namespace VENDAS.DOMAIN.Dtos.Response;
 
 /// <summary>
 /// Objeto de transporte de dados de response de filial.

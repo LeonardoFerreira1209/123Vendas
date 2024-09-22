@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 using System.Net;
-using VENDAS.DOMAIN.Dtos.Base;
+using VENDAS.DOMAIN.Dtos.Response.Base;
 using VENDAS.DOMAIN.Exceptions.Base;
 
 namespace VENDAS.DOMAIN.Helpers.Extensions;

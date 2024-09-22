@@ -1,4 +1,4 @@
-﻿namespace VENDAS.DOMAIN.Dtos.Request;
+﻿namespace VENDAS.DOMAIN.Dtos.Response;
 
 /// <summary>
 /// Objeto de transporte de dados de response de produto.
@@ -23,7 +23,7 @@ public class ProductResponse
     /// <summary>
     /// Valor unitário.
     /// </summary>
-    public decimal UnitVakue { get; set; }
+    public decimal UnitValue { get; set; }
 
     /// <summary>
     /// Quantidade.

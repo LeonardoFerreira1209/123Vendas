@@ -5,5 +5,6 @@
 /// </summary>
 public enum StatusVenda
 {
-    Cancelado, NaoCancelado
+    NaoCancelado = 1,
+    Cancelado = 2
 }

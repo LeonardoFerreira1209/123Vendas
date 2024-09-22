@@ -1,20 +1,20 @@
-﻿using Newtonsoft.Json;
-using System.Net;
+﻿using System.Net;
 
-namespace VENDAS.DOMAIN.Dtos.Base;
+namespace VENDAS.DOMAIN.Dtos.Response.Base;
 
 /// <summary>
-/// Retorno das APIS.
+/// Retorno das APIS paginada.
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class ApiResponse<T>
+public class PaginationApiResponse<T>
     : BaseApiResponse where T : class
 {
     /// <summary>
     /// Construtor simples
     /// </summary>
     /// <param name="statusCode"></param>
-    public ApiResponse(HttpStatusCode statusCode) : base(statusCode) { }
+    public PaginationApiResponse(HttpStatusCode statusCode)
+        : base(statusCode) { }
 
     /// <summary>
     /// Construtor sem recebimento de dados.
@@ -22,11 +22,10 @@ public class ApiResponse<T>
     /// <param name="sucesso"></param>
     /// <param name="statusCode"></param>
     /// <param name="notificacoes"></param>
-    public ApiResponse(bool sucesso, HttpStatusCode statusCode,
+    public PaginationApiResponse(bool sucesso, HttpStatusCode statusCode,
         List<DadosNotificacao> notificacoes = null)
             : base(statusCode, sucesso, notificacoes)
     {
-
     }
 
     /// <summary>
@@ -34,18 +33,17 @@ public class ApiResponse<T>
     /// </summary>
     /// <param name="sucesso"></param>
     /// <param name="statusCode"></param>
-    /// <param name="dados"></param>
+    /// <param name="paginatedResponse"></param>
     /// <param name="notificacoes"></param>
-    public ApiResponse(bool sucesso, HttpStatusCode statusCode,
-        T dados = null, List<DadosNotificacao> notificacoes = null)
+    public PaginationApiResponse(bool sucesso, HttpStatusCode statusCode,
+        PaginatedResponse<T> paginatedResponse, List<DadosNotificacao> notificacoes = null)
             : base(statusCode, sucesso, notificacoes)
     {
-        Dados = dados;
+        Paginacao = paginatedResponse;
     }
 
     /// <summary>
-    /// Dados a serem retornados na requisição.
+    /// Dados da paginação.
     /// </summary>
-    [JsonProperty(nameof(Dados))]
-    public T Dados { get; }
+    public PaginatedResponse<T> Paginacao { get; set; }
 }

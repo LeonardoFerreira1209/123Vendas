@@ -10,18 +10,15 @@ public class SaleRequest
     /// <summary>
     /// Dados da filial.
     /// </summary>
-    [Required()]
-    public BranchResponse Branch { get; set; }
+    public BranchRequest Branch { get; set; }
 
     /// <summary>
     /// Dados do cliente.
     /// </summary>
-    [Required()]
     public ClientRequest Client { get; set; }
 
     /// <summary>
     /// Lista de dados de Produto.
     /// </summary>
-    [Required()]
     public IEnumerable<ProductRequest> Products { get; set; }
 }

@@ -6,6 +6,11 @@
 public class ProductRequest
 {
     /// <summary>
+    /// Identificador.
+    /// </summary>
+    public Guid Id { get; set; }
+
+    /// <summary>
     /// Nome.
     /// </summary>
     public string Name { get; set; }
@@ -18,7 +23,7 @@ public class ProductRequest
     /// <summary>
     /// Valor unitário.
     /// </summary>
-    public decimal UnitVakue { get; set; }
+    public decimal UnitValue { get; set; }
 
     /// <summary>
     /// Quantidade.

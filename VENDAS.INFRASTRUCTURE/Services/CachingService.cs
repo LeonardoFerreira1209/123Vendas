@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using VENDAS.DOMAIN.Contracts.Services;
 
-namespace VENDAS.APPLICATION.Services;
+namespace VENDAS.INFRASTRUCTURE.Services;
 
 /// <summary>
 /// Serviço de controle de cache do sistema.

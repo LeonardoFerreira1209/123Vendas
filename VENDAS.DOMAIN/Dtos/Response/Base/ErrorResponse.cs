@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
 
-namespace VENDAS.DOMAIN.Dtos.Base;
+namespace VENDAS.DOMAIN.Dtos.Response.Base;
 
 /// <summary>
 /// Retorno das APIS com erro.

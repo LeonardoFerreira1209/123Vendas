@@ -1,5 +1,5 @@
 ﻿using System.Linq.Expressions;
-using VENDAS.DOMAIN.Dtos.Base;
+using VENDAS.DOMAIN.Dtos.Response.Base;
 using VENDAS.DOMAIN.Entities;
 
 namespace VENDAS.DOMAIN.Contracts.Repositories.Base;

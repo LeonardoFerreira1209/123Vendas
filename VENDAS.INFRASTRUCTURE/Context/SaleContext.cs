@@ -14,7 +14,15 @@ namespace VENDAS.INFRASTRUCTURE.Context;
 public sealed class SaleContext(
     DbContextOptions<SaleContext> options) : DbContext(options)
 {
+    /// <summary>
+    /// Sales table.
+    /// </summary>
     public DbSet<SaleEntity> Sales => Set<SaleEntity>();
+
+    /// <summary>
+    /// Events table.
+    /// </summary>
+    public DbSet<EventEntity> Events => Set<EventEntity>();
 
     /// <summary>
     /// On model creating.

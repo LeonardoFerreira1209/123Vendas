@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
 
-namespace VENDAS.DOMAIN.Dtos.Base;
+namespace VENDAS.DOMAIN.Dtos.Response.Base;
 
 /// <summary>
 /// Dados a ser retornado em uma notificação do sistema.

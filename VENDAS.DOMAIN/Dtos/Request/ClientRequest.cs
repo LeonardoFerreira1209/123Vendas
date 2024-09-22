@@ -6,6 +6,11 @@
 public class ClientRequest
 {
     /// <summary>
+    /// Identificador.
+    /// </summary>
+    public Guid Id { get; set; }
+
+    /// <summary>
     /// Nome.
     /// </summary>
     public string Name { get; set; }

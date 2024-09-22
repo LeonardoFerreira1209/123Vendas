@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace VENDAS.INFRASTRUCTURE.Migrations
 {
     /// <inheritdoc />
-    public partial class INITIAL : Migration
+    public partial class AjusteUnitValue : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -81,7 +81,7 @@ namespace VENDAS.INFRASTRUCTURE.Migrations
                     SaleEntityId = table.Column<Guid>(type: "char(36)", nullable: false),
                     Name = table.Column<string>(type: "longtext", nullable: true),
                     Description = table.Column<string>(type: "longtext", nullable: true),
-                    UnitVakue = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    UnitValue = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Discount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TotalAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)

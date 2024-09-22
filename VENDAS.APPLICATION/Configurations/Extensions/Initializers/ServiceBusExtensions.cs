@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using VENDAS.INFRASTRUCTURE.ServiceBus;
 
 namespace VENDAS.APPLICATION.Configurations.Extensions.Initializers;
 
@@ -15,9 +17,9 @@ public static class ServiceBusExtensions
     public static WebApplication ConfigureServiceBusSubscriber(
         this WebApplication webApplication)
     {
-        //webApplication.Services
-        //    .GetService<EventServiceBusSubscriber>()
-        //        .RegisterReceiveMessageHandler();
+        webApplication.Services
+            .GetService<EventServiceBusSubscriber>()
+                .RegisterReceiveMessageHandler();
 
         return webApplication;
     }
