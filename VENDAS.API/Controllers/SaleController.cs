@@ -77,7 +77,7 @@ public class SaleController(ISaleService saleService)
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     [HttpPatch("{id}/cancelation")]
-    [SwaggerOperation(Summary = "Atualizar venda", Description = "Método responsável atualizar uma venda!")]
+    [SwaggerOperation(Summary = "Cancelar venda", Description = "Método responsável cancelar uma venda!")]
     [ProducesResponseType(typeof(ApiResponse<SaleResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<SaleResponse>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<SaleResponse>), StatusCodes.Status500InternalServerError)]
