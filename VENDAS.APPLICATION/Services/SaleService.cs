@@ -88,7 +88,6 @@ public class SaleService(
             }
             catch (Exception)
             {
-
                 transaction.Rollback();
 
                 throw;
@@ -174,7 +173,6 @@ public class SaleService(
             }
             catch (Exception)
             {
-
                 transaction.Rollback();
 
                 throw;
