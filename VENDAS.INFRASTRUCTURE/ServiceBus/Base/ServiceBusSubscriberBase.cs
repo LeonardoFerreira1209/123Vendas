@@ -35,18 +35,18 @@ public abstract class ServiceBusSubscriberBase(
         Log.Information(
            $"[LOG INFORMATION] - SET TITLE {nameof(ServiceBusSubscriberBase)} - METHOD {nameof(RegisterReceiveMessageHandler)} - Subscriber inicializado\n");
 
-        _busClient =
-            new ServiceBusClient(busConnection);
-
-        var messageHandlerOptions
-            = new ServiceBusProcessorOptions
-            {
-                MaxConcurrentCalls = 1,
-                AutoCompleteMessages = true,
-            };
-
         try
         {
+            _busClient =
+                        new ServiceBusClient(busConnection);
+    
+            var messageHandlerOptions
+                = new ServiceBusProcessorOptions
+                {
+                    MaxConcurrentCalls = 1,
+                    AutoCompleteMessages = true,
+                };
+        
             ServiceBusProcessor processor
                 = _busClient.CreateProcessor(
                     queueOrTopicName, messageHandlerOptions);
